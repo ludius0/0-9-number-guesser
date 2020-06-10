@@ -8,9 +8,9 @@ Mouse: \
   left click -> draw \
   right click -> erase \
  Keyboard: \
-  space -> load model and guess number (than erase whole display) \
+  space -> load model and guess number (than erase whole display) 
 
-![ezgif com-gif-maker(6)](https://user-images.githubusercontent.com/57571014/84257428-99219800-ab15-11ea-96d5-ebeb253d4b83.gif)\n
+![ezgif com-gif-maker(6)](https://user-images.githubusercontent.com/57571014/84257428-99219800-ab15-11ea-96d5-ebeb253d4b83.gif)
 
 In background is board of (1, 28, 28, 1) dimensions, it is list of pixels of your picture you draw (on grid of 28x28 rects/pixels).
 There is one added script "create_model.py". If there isn't model in directory with "main.py" or if you want tweak model you can  used that script.
