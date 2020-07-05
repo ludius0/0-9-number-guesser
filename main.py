@@ -1,8 +1,3 @@
-"""
-Programmed by ludius0
-"""
-# Modules
-import tkinter as tk
 import numpy as np
 from PIL import Image, ImageGrab
 
@@ -12,11 +7,10 @@ import dataset_f as df
 
 # Images from MNIST dataset are 28*28=784; We load them in vector array
 # Hidden layer will have 100 neuron and output is 10 (0-9 digits)
-output_nodes = 10
-DigitGuesser = NeuralNetwork(784, 58, output_nodes, learning_rate=0.1)
+DigitGuesser = NeuralNetwork(784, 112, 56, 10, learning_rate=0.1)
 
 # Train Neural Network on MNIST dataset of hand writed digits
-df.train_network(DigitGuesser, epochs=5)
+df.train_network(DigitGuesser, epochs=5, test=True)
 # Test Neural Network on MNIST that network never seen before and calculate accuracy
 df.test_network(DigitGuesser)
 
@@ -94,4 +88,3 @@ if __name__ == "__main__":
             self.use_network(img_array)
 
     app = Painter()
-

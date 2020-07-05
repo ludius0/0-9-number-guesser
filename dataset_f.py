@@ -1,7 +1,7 @@
 import numpy as np
 from time import time
 
-def train_network(Network, epochs=1):
+def train_network(Network, epochs=1, test=False):
     # load the mnist training data CSV file into a list
     training_data_file = open("mnist_dataset/mnist_train.csv", 'r')
     training_data_list = training_data_file.readlines()
@@ -23,11 +23,18 @@ def train_network(Network, epochs=1):
             
             Network.train(inputs, targets)
             
-            if n % 5000 == 0 and n != 0:
+            if n % 10000 == 0 and n != 0:
                 print(f"Already trained on {n} / {lenght} images. (Epochs: {e} / {epochs})")
 
-        print(f"All {n+1} images trained in {e} epochs")
+        print(f"All {n+1} images trained in {e} epochs \n")
+        if test == True:
+            test_network(Network)
     print(f"Training was done in {round(time() - start, 2)} seconds")
+
+    if test == True:
+        print("\n")
+        print("-" * 25)
+        print("Accuracy through epochs:", Network.accuracy)
 
 
 
@@ -58,10 +65,12 @@ def test_network(Network):
             scoreboard.append(1)
         else:
             scoreboard.append(0)
-        if n % 1000 == 0 and n != 0:
+        if n % 5000 == 0 and n != 0:
             print(f"Already tested on {n} / {lenght} images.")
 
-    print(f"Testing is done on overall {n+1} images. It took {round(time() - start, 2)} seconds")
+    print(f"Testing is done on overall {n+1} images. It took {round(time() - start, 2)} seconds \n")
     # calculate the performance score, the fraction of correct answers
     scoreboard_array = np.asarray(scoreboard)
-    print (f"Accuracy: {(scoreboard_array.sum() / scoreboard_array.size) * 100}%")
+    acc = (scoreboard_array.sum() / scoreboard_array.size) * 100
+    print(f"Accuracy: {acc}%")
+    Network.accuracy.append(acc)
