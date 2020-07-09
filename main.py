@@ -2,7 +2,7 @@ import torch
 import torch.nn as nn
 from torch.utils.data import Dataset
 import pandas as pd
-import mtplotlib.pyplot as plt
+import matplotlib.pyplot as plt
 
 class MnistDataset(Dataset):
     def __init__(self, path):
@@ -30,9 +30,9 @@ class DigitClassifier(nn.Module):
         super().__init__()
 
         self.model = nn.Sequential(
-            nn.Linear(784, 200)
+            nn.Linear(784, 200),
             nn.Sigmoid(),
-            nn.Linear(200, 10)
+            nn.Linear(200, 10),
             nn.Sigmoid()
             )
         self.loss_function = nn.MSELoss()
