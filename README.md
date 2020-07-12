@@ -6,5 +6,6 @@
 - Pytorch
 - Pandas
 - Matplotlib
+- Numpy
 
 You need dataset from here: https://github.com/pjreddie/mnist-csv-png
