@@ -4,7 +4,6 @@
 ----------------------------
 **Third-party modules:**
 - Pytorch
-- Pandas
 - Matplotlib
 - Numpy
 
