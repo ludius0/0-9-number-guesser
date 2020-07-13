@@ -9,7 +9,7 @@
 You need dataset from here: https://github.com/pjreddie/mnist-csv-png
 
 
-![ezgif com-gif-maker2](https://user-images.githubusercontent.com/57571014/87329620-85fc5080-c537-11ea-9118-cef122809059.gif)
+![ezgif com-video-to-gif](https://user-images.githubusercontent.com/57571014/86401674-f0490180-bcaa-11ea-9f4b-d39c83d36b51.gif)
 
 **INFO:**\
 After you download MNIST dataset in csv format in mnist_dataset folder (Both: training set & testing set). 
