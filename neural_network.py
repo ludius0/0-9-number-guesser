@@ -4,9 +4,6 @@ class ActivationFunction:
     def sigmoid(x):
         return 1/(1 + np.exp(-x))
 
-    def sigmoid_derivates(x, steps):
-        return (sigmoid(x+step) - sigmoid(x)) / step
-
 class NeuralNetwork:
     def __init__(self, input_neurons_shape, hidden_neuron_shape, output_neuron_shape, learning_rate=0.1):
         # Parameters
@@ -33,7 +30,7 @@ class NeuralNetwork:
         
         # update the weights for the links between the first and second (output) layers -> Cost function
         # Compute gradiant descent with back propagation
-        #print(self.lr * np.dot((output_errors * self.layer2_output * (1.0 - self.layer2_output)), np.transpose(self.layer1_output)))
+        # learning rate * (error * derivative of sigmoid) * previous layer output
         d_weights2 = self.lr * np.dot((output_errors * self.layer2_output * (1.0 - self.layer2_output)), np.transpose(self.layer1_output))
         d_weights1 = self.lr * np.dot((hidden_errors * self.layer1_output * (1.0 - self.layer1_output)), np.transpose(inputs))
 
